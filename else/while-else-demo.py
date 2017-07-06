@@ -1,3 +1,6 @@
+#
+# evaluator
+#
 def is_comment(item):
     return isinstance(item, str) and item.startswith("#")
 
@@ -8,7 +11,7 @@ def execute(program):
         item = program.pop()
         if not is_comment(item):
             program.append(item)
-            break  # bypass while-else
+            break  # bypass while-else clause
     else:  # no break
         print "Empty program"
         return
@@ -21,7 +24,7 @@ def execute(program):
                 result = item(*pending)
             except Exception as e:
                 print "Error: ", e
-                break  # bypass while-else
+                break  # bypass while-else clause
             program.append(result)
             pending = []
         else:

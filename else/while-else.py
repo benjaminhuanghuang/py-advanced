@@ -29,6 +29,6 @@ if not condition:
 while condition:
     flag = execute_condition_is_true()
     if flag:
-        break   # break will skip execute_condition_is_false()
+        break   # # bypass while-else clause (skipping execute_condition_is_false())
 else:
     execute_condition_is_false()
